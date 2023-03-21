@@ -9,7 +9,25 @@ readme = "README.md"
 python = "^3.11"
 flask = "^2.2.3"
 connexion = {version = "^2.14.2", extras = ["swagger-ui"]}
+iso4217 = "^1.11.20220401"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+isort = "^5.10.1"
+black = "^22.10.0"
+flake8 = "^5.0.4"
+flake8-annotations = "^2.9.1"
+mypy = "^1.0"
+pre-commit = "^3.2.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+exclude = 'E731'
+
+[tool.isort]
+profile = "black"
